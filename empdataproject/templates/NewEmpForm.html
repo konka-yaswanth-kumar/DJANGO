@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'cdnlines.html' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BLOOD&GLORY</title>
+</head>
+<style media="screen">
+    input[name]{
+        margin-top: -10;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <form method="post">
+                    <h2>Please Enter Employee Details.!!!</h2>
+                    {% csrf_token %}
+                    <label>Enter First Name :</label>
+                    <input type="text" name="fname" class="form-control">
+                    <label>Enter Last Name :</label>
+                    <input type="text" name="lname" class="form-control">
+                    <label>Enter Email ID :</label>
+                    <input type="email" name="email" class="form-control">
+                    <label>Enter Mobile Number :</label>
+                    <input type="number" name="mobile" class="form-control">
+                    <label>Enter Qualification</label>
+                    <input type="text" name="qualification" class="form-control">
+                    <label>Enter Your Stream :</label>
+                    <input type="text" name="stream" class="form-control">
+                    <label>Enter Percentage :</label>
+                    <input type="text" name="percentage" class="form-control">
+                    <label>Enter Passedout Year :</label>
+                    <input type="number" name="passed" class="form-control">
+                    <label>Enter Your Skill Set :</label>
+                    <input type="text" name="skill" class="form-control">
+                    <div class="text-center mt-2">
+                        <input type="submit" value="Submit" class="btn btn-success">
+                        <input type="reset" value="Cancle" class="btn btn-danger"><br>
+                        <a href="{% url 'mainpage' %}" class="btn btn-primary mt-2 btn-block">Go To Main Page</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

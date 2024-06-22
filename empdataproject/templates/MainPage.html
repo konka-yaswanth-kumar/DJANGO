@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'cdnlines.html' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIKING</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center text-info">Welcome to Narayana Tech House</h1>
+                <hr>
+                <div class="text-right">
+                    <a class="btn btn-success" href="addNewEmp">Add New Emp</a>
+                </div>
+                {% if yash %}
+                <table class="table text-center table-bordered mt-2 ">
+                    <thead class="text-warning">
+                        <tr>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Email ID</th>
+                            <th>Mobile number</th>
+                            <th>Qualification</th>
+                            <th>Stream</th>
+                            <th>Percentage</th>
+                            <th>Passed out year</th>
+                            <th>Skill set</th>
+                            <th class="text-primary">ACTION </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-primary">
+                        {% for i in yash %}
+                        <tr>
+                            <td>{{ i.First_name }}</td>
+                            <td>{{ i.Last_name }}</td>
+                            <td>{{ i.Email_id }}</td>
+                            <td>{{ i.Mobile_number }}</td>
+                            <td>{{ i.Qualification }}</td>
+                            <td>{{ i.Stream }}</td>
+                            <td>{{ i.Percentage }}</td>
+                            <td>{{ i.Passed_out_year }}</td>
+                            <td>{{ i.Skill_set }}</td>
+                            <td>
+                                <a href="{% url 'update' i.id %}" class="btn btn-success">UPDATE</a>
+                                <a href="{% url 'delete' i.id %}" class="btn btn-danger">DELETE</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <h1 class="text-center">NO DATA AVAILABLE</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
